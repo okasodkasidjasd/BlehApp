@@ -1,0 +1,21 @@
+// Importing necessary modules
+const express = require('express');
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
+
+// Creating an instance of Express
+const app = express();
+
+// Handling GET request to root URL '/'
+app.get('/sunflower', (req, res) => {
+  res.send('I am a sunflower');
+});
+
+
+let port =  process.env.PORT || 3000
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
